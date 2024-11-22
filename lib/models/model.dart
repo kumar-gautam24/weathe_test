@@ -1,12 +1,12 @@
-class Weather_data {
+class WeatherData {
   Location? location;
   Current? current;
 
-  Weather_data({this.location, this.current});
+  WeatherData({this.location, this.current});
 
-  Weather_data.fromJson(Map<String, dynamic> json) {
+  WeatherData.fromJson(Map<String, dynamic> json) {
     location = json['location'] != null
-        ? new Location.fromJson(json['location'])
+        ? Location.fromJson(json['location'])
         : null;
     current =
         json['current'] != null ? new Current.fromJson(json['current']) : null;
@@ -14,11 +14,11 @@ class Weather_data {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.location != null) {
-      data['location'] = this.location?.toJson();
+    if (location != null) {
+      data['location'] = location?.toJson();
     }
-    if (this.current != null) {
-      data['current'] = this.current?.toJson();
+    if (current != null) {
+      data['current'] = current?.toJson();
     }
     return data;
   }
@@ -38,10 +38,10 @@ class Location {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['name'] = this.name;
-    data['region'] = this.region;
-    data['country'] = this.country;
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    data['name'] = name;
+    data['region'] = region;
+    data['country'] = country;
     return data;
   }
 }

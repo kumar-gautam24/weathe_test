@@ -10,12 +10,12 @@ class WeatherService {
 
   WeatherService({required this.apiUrl});
 
-  Future<Weather_data?> fetchWeather() async {
+  Future<WeatherData?> fetchWeather() async {
     try {
       final response = await http.get(Uri.parse(apiUrl));
       if (response.statusCode == 200) {
         final json = jsonDecode(response.body);
-        return Weather_data.fromJson(json);
+        return WeatherData.fromJson(json);
       } else {
         throw Exception('Failed to load weather data');
       }
