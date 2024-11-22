@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'services/rep/weather_api.dart';
 import 'models/model.dart';
 
@@ -12,7 +13,7 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherscreenState extends State<WeatherScreen> {
-  final WeatherService _weatherService = WeatherService(apiUrl: "https://api.weatherapi.com/v1/current.json?key=89a9c4b83a8c468f969113903242111&q=location");
+  final WeatherService _weatherService = WeatherService(apiUrl: dotenv.env['apikey']!);
   WeatherData? _weatherData;
   bool loading = false;
   String errorMessage = '';

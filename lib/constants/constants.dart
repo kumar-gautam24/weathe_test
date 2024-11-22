@@ -1,2 +1,0 @@
-String api =
-    "https://api.weatherapi.com/v1/current.json?key=89a9c4b83a8c468f969113903242111&q=location";
